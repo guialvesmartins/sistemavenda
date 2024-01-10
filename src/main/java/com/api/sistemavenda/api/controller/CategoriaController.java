@@ -1,7 +1,5 @@
-package com.api.sistemavenda.controller;
-
+package com.api.sistemavenda.api.controller;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,10 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.api.sistemavenda.model.Categoria;
-import com.api.sistemavenda.repository.CategoriaRepository;
-
+import com.api.sistemavenda.domain.model.Categoria;
+import com.api.sistemavenda.domain.repository.CategoriaRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @CrossOrigin(origins = "*")

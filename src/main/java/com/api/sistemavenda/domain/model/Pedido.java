@@ -1,8 +1,8 @@
-package com.api.sistemavenda.model;
+package com.api.sistemavenda.domain.model;
 
 import java.util.List;
 
-import com.api.sistemavenda.model.Enums.SituacaoPedido;
+import com.api.sistemavenda.domain.model.Enums.SituacaoPedido;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,8 +15,16 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class Pedido {
 
@@ -38,44 +46,5 @@ public class Pedido {
     private String observacao;
     @Enumerated(EnumType.STRING)
     private SituacaoPedido situacaoPedido;
-
-    public Long getId() {
-        return Id;
-    }
-    public void setId(Long id) {
-        Id = id;
-    }
-    public Cliente getCliente() {
-        return cliente;
-    }
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
-    public Number getValor() {
-        return valor;
-    }
-    public SituacaoPedido getSituacaoPedido() {
-        return situacaoPedido;
-    }
-    public void setSituacaoPedido(SituacaoPedido situacaoPedido) {
-        this.situacaoPedido = situacaoPedido;
-    }
-    public void setValor(Number valor) {
-        this.valor = valor;
-    }
-    public String getObservacao() {
-        return observacao;
-    }
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
-    }
-
-    
     
 }

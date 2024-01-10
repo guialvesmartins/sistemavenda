@@ -1,4 +1,4 @@
-package com.api.sistemavenda.controller;
+package com.api.sistemavenda.api.controller;
 
 import java.util.List;
 
@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.api.sistemavenda.model.Pedido;
-import com.api.sistemavenda.repository.PedidoRepository;
+
+import com.api.sistemavenda.domain.model.Pedido;
+import com.api.sistemavenda.domain.repository.PedidoRepository;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @CrossOrigin(origins = "*")
