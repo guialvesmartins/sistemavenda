@@ -1,4 +1,4 @@
-package com.api.sistemavenda.controller;
+package com.api.sistemavenda.api.controller;
 
 import java.util.List;
 
@@ -11,40 +11,40 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.sistemavenda.model.Produto;
-import com.api.sistemavenda.repository.ProdutoRepository;
+import com.api.sistemavenda.domain.model.Cliente;
+import com.api.sistemavenda.domain.repository.ClienteRepository;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("/cliente")
 
-public class ProdutoController {
+public class ClienteController {
     
     @Autowired
-    private ProdutoRepository repository;
+    private ClienteRepository repository;
 
     @GetMapping
-    public List<Produto> listar(){
+    public List<Cliente> listar(){
         return repository.findAll();
     }
 
     @PostMapping
-    public void incluir(@RequestBody Produto produto){
-        repository.save(produto);
+    public void incluir(@RequestBody Cliente cliente){
+        repository.save(cliente);
     }
 
     @PutMapping 
-    public void alterar(@RequestBody Produto produto){
-        if(produto.getId() > 0){
-            repository.save(produto);
+    public void alterar(@RequestBody Cliente cliente){
+        if(cliente.getId() > 0){
+            repository.save(cliente);
         }
     }
 
     @DeleteMapping
-    public void excluir(@RequestBody Produto produto){
-        repository.delete(produto);
+    public void excluir(@RequestBody Cliente cliente){
+        repository.delete(cliente);
     }
 
 }
